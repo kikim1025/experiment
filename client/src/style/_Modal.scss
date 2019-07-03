@@ -1,0 +1,138 @@
+$modal-height: 83vh;
+$modal-width: 60vw;
+$modal-out__top-height: 5vh;
+$modal-out__bottom-height: 100vh - $modal-out__top-height - $modal-height;
+$modal-out__width: (100vw - $modal-width) / 2;
+
+.modal-box {
+    position: relative;
+}
+
+.modal-out {
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    z-index: 1;
+            
+    &__top {
+        height: $modal-out__top-height;
+        width: 100vw;
+        top: 0;
+        left: 0;
+    }
+
+    &__right {
+        height: $modal-height;
+        width: $modal-out__width;
+        top: $modal-out__top-height;
+        right: 0;
+    }
+
+    &__bottom {
+        height: $modal-out__bottom-height;
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__left {
+        height: $modal-height;
+        width: $modal-out__width;
+        top: $modal-out__top-height;
+        left: 0;
+    }
+}
+
+.modal {
+    background-color: rgb(236, 223, 248);
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: 49.5% 49.5%;
+    grid-template-rows: auto 45% 35% 1fr;
+    height: $modal-height;
+    width: $modal-width;
+    position: absolute;
+    top: $modal-out__top-height;
+    left: $modal-out__width;
+    z-index: 1;
+
+    .modal__header {
+        background-color: rgba(58, 8, 58, 0.753);
+        color: white;
+        font-size: 1.5rem;
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        height: 100%;
+        width: 98%;
+        margin: auto;
+        margin-top: .5%;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    
+    .modal__img {
+        grid-column: 1;
+        padding: 1%;
+
+        & img {
+            height: 100%;
+            object-fit: fill;
+            width: 100%;
+        }
+    }
+
+    .modal__desc {
+        grid-column: 2;
+        grid-row: 2 / span 2;
+        line-height: 150%;
+        overflow: auto;
+        padding: 1rem;
+    }
+    
+    .modal__keywords {
+        overflow: auto;
+        
+        &__header {
+            background-color: rgba(78, 17, 78, 0.753);
+            color: white;
+            font-size: 1.2rem;
+            padding: .3rem 0 .3rem 0;
+            text-align: center;
+            margin-bottom: .2rem;
+        }
+
+        .keyword {
+            font-size: 1rem;
+            padding-left: 20%;
+        }
+    }
+    
+    .modal__links {
+        grid-column: 1 / span 2;
+        grid-row: 4;
+        padding-top: 1%;
+        position: relative;
+
+        & a {
+            background-color: rgba(201, 170, 201, 0.753);
+            display: inline block;
+            padding: 1rem;
+            position: absolute;
+            margin: 0 15% 0 15%;
+
+            &:hover {
+                background-color: rgba(29, 6, 29, 0.753);
+                color: white;
+            }
+
+            &:nth-child(1) {
+                top: 1vh;
+                left: 1vw;
+            }
+
+            &:nth-child(2) {
+                top: 1vh;
+                right: 1vw;
+            }
+        }
+    }
+}

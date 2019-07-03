@@ -1,0 +1,10 @@
+@import 'Project';
+@import 'Modal';
+
+// might customize lata
+#tab-projects {
+    background: url('../assets/img/background.svg');
+    min-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+}

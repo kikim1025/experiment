@@ -1,0 +1,88 @@
+@mixin animation($property) {
+    -webkit-animation: $property;
+    -moz-animation: $property;
+    -ms-animation: $property;
+    animation: $property;
+}
+
+#tab-main {
+    background: url('../assets/img/background.svg');
+    min-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+
+    .circle {
+        height: 170vh;
+        width: 170vh;
+        margin: auto;
+        position: absolute;
+        top: -45vh;
+        left: 0;
+        right: 0;
+
+        @media (max-aspect-ratio: 17/10) {
+            top: -35vh;
+            height: 150vh;
+            width: 150vh;
+        }
+        
+        @media (max-aspect-ratio: 29/20) {
+            top: -25vh;
+            height: 130vh;
+            width: 130vh;
+        }
+        
+        @media (max-aspect-ratio: 5/4) {
+            top: -15vh;
+            height: 110vh;
+            width: 110vh;
+        }
+        
+        @media (max-aspect-ratio: 1/1) {
+            top: -5vw;
+            height: 100vw;
+            width: 100vw;
+        }
+    }
+
+    .circle-background {
+        @include animation(rotateCW 60s infinite linear);
+        background: url('../assets/img/circle-background.svg');
+    }
+    .circle-outer {
+        @include animation(rotateCCW 24s infinite linear);
+        background: url('../assets/img/circle-outer.svg');
+    }
+    
+    .circle-middle {
+        @include animation(rotateCW 23s infinite linear);
+        background: url('../assets/img/circle-middle.svg');
+    }
+    
+    .circle-inner {
+        @include animation(rotateCCW 18s infinite linear);
+        background: url('../assets/img/circle-inner.svg');
+    }
+    
+    .circle-name {
+        background: url('../assets/img/name.svg');
+    }
+    
+    @keyframes rotateCW {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes rotateCCW {
+        0% {
+            transform: rotate(360deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+}

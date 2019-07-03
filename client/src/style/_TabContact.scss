@@ -1,0 +1,22 @@
+// might customize lata
+#tab-contact {
+    background: url('../assets/img/background.svg');
+    min-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+
+    #contact {
+        font-size: 2rem;
+        position: absolute;
+        top: 30vh;
+        right: 0;
+        left: 0;
+        text-align: center;
+        margin: auto;
+        
+        & a {
+            display: block;
+            text-decoration: none;
+        }
+    }
+}
